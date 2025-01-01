@@ -1,7 +1,4 @@
-#Connection url for connection in the DatabaseView:
-#  jdbc:mysql://0.0.0.0:13306/DOCKERDB, login=root, password=root
 #App is available at: http://localhost:<local-port>/entitybus/post
-version: "3.8"
 networks:
   test:
 
@@ -21,4 +18,5 @@ services:
       - mongo-data:/data/db
     environment:
       - MONGO_INITDB_DATABASE=bmr-core-db
-
+volumes:
+  mongo-data:
