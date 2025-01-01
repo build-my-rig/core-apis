@@ -12,3 +12,13 @@ services:
       dockerfile: Dockerfile
     networks:
       - test
+  mongo:
+    image: mongo:latest
+    container_name: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+    environment:
+      - MONGO_INITDB_DATABASE=bmr-core-db
+
